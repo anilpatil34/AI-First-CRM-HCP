@@ -2,7 +2,6 @@
 
 An intelligent, AI-powered Customer Relationship Management system designed for pharmaceutical sales representatives to efficiently manage Healthcare Professional (HCP) interactions using conversational AI.
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Python](https://img.shields.io/badge/python-3.10+-green.svg)
 ![React](https://img.shields.io/badge/react-19-blue.svg)
 ![FastAPI](https://img.shields.io/badge/fastapi-0.115-teal.svg)
