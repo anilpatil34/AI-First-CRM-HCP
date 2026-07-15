@@ -128,7 +128,7 @@ def parse_time(time_str: str) -> Optional[str]:
     time_str = time_str.strip().lower()
 
     # Handle AM/PM
-    formats = ["%I:%M %p", "%I:%M%p", "%H:%M", "%I %p", "%H:%M:%S"]
+    formats = ["%I:%M %p", "%I:%M%p", "%H:%M", "%I %p", "%I%p", "%H:%M:%S"]
     for fmt in formats:
         try:
             parsed = datetime.strptime(time_str, fmt)

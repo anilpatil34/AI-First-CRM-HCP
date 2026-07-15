@@ -4,7 +4,7 @@ Updates specific fields of an existing interaction via natural language.
 """
 
 from app.services.groq_service import get_groq_service
-from app.utils.parser import parse_json_from_llm
+from app.utils.parser import parse_json_from_llm, parse_date, parse_time
 from app.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -59,16 +59,34 @@ def edit_interaction(user_message: str, current_data: dict = None) -> dict:
     response = groq.invoke(messages)
     result = parse_json_from_llm(response)
 
-    if result and "updates" in result:
+    if result:
+        # Normalize fields in updates dict
+        updates = result.get("updates", {})
+        if not updates and "field" in result:
+            updates = {result["field"]: result.get("value")}
+            result["updates"] = updates
+
+        if "date" in updates and updates["date"]:
+            updates["date"] = parse_date(updates["date"]) or updates["date"]
+            if result.get("field") == "date":
+                result["value"] = updates["date"]
+
+        if "time" in updates and updates["time"]:
+            updates["time"] = parse_time(updates["time"]) or updates["time"]
+            if result.get("field") == "time":
+                result["value"] = updates["time"]
+
         logger.info(f"Edit parsed: {result.get('field')} -> {result.get('value')}")
         return result
 
-    if result and "field" in result:
-        result["updates"] = {result["field"]: result.get("value")}
-        return result
-
     # Fallback: try simple parsing
-    return _simple_parse_edit(user_message)
+    fallback_result = _simple_parse_edit(user_message)
+    updates = fallback_result.get("updates", {})
+    if "date" in updates and updates["date"]:
+        updates["date"] = parse_date(updates["date"]) or updates["date"]
+    if "time" in updates and updates["time"]:
+        updates["time"] = parse_time(updates["time"]) or updates["time"]
+    return fallback_result
 
 
 def _format_current_data(data: dict) -> str:
