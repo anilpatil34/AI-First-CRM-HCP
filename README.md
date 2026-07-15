@@ -144,6 +144,3 @@ AI-First-CRM-HCP/
 | GET | `/api/v1/doctor/search/{q}` | Search doctors |
 | GET | `/api/v1/history/{name}` | Doctor interaction history |
 
-## 📝 License
-
-MIT License — see [LICENSE](LICENSE) for details.
