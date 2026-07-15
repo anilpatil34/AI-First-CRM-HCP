@@ -76,7 +76,7 @@
 /* Messages Area — THIS IS THE KEY FIX */
 .chat-panel__messages {
   flex: 1 1 auto;
-  min-height: 150px;
+  min-height: 80px;
   overflow-y: auto;
   padding: var(--space-4);
   display: flex;
@@ -192,7 +192,7 @@
   padding: var(--space-2) var(--space-4);
   border-top: 1px solid var(--color-border);
   flex-shrink: 0;
-  max-height: 140px;
+  max-height: 95px;
   overflow-y: auto;
 }
 .suggestion-chips__label {
