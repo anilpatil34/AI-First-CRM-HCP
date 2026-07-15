@@ -1,0 +1,32 @@
+/* ============================================
+   Dashboard Page Styles
+   ============================================ */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  min-height: calc(100vh - 60px);
+}
+
+.dashboard__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard__right {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__right {
+    height: 500px;
+  }
+}

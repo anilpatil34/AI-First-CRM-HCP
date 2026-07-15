@@ -1,0 +1,52 @@
+/* ============================================
+   ToolExecution Styles
+   ============================================ */
+
+.tool-execution {
+  padding: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-sm);
+  background-color: var(--color-surface);
+}
+
+.tool-execution__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tool-execution__name {
+  font-weight: 600;
+}
+
+.tool-execution__status {
+  font-size: var(--font-size-sm);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-border);
+}
+
+.tool-execution--running .tool-execution__status {
+  background-color: var(--color-warning);
+  color: #fff;
+}
+
+.tool-execution--completed .tool-execution__status {
+  background-color: var(--color-success);
+  color: #fff;
+}
+
+.tool-execution--error .tool-execution__status {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+
+.tool-execution__result pre {
+  font-size: var(--font-size-sm);
+  background-color: #f8fafc;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+}

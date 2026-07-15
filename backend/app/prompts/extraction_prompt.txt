@@ -1,0 +1,40 @@
+Extract structured CRM data from the following interaction description. Return ONLY a valid JSON object with these fields:
+
+- "doctor": Doctor's full name (string, e.g., "Dr. Rajesh Sharma")
+- "product": Primary product discussed (string)
+- "sentiment": Overall doctor sentiment - must be "Positive", "Neutral", or "Negative" (string)
+- "topics": Key discussion topics (array of strings)
+- "materials": Materials shared with the doctor (array of strings, e.g., ["brochure", "clinical study"])
+- "samples": Product samples distributed (array of strings)
+- "summary": Professional 2-sentence summary of the interaction (string)
+- "follow_up": Recommended next follow-up action (string)
+- "outcomes": Key outcomes or agreements (string)
+- "date": Date of interaction (string in YYYY-MM-DD format, use today's date if "today" mentioned)
+- "time": Time of interaction if mentioned (string in HH:MM format)
+- "interaction_type": Type - "Meeting", "Call", "Email", "Conference", or "Other" (string)
+- "attendees": People present at the interaction (array of strings)
+
+Example input:
+"Met Dr Sharma today at Apollo Hospital. Discussed CardioX efficacy. Doctor was very impressed with the Phase III data. Shared the brochure and gave 2 sample packs. Follow-up scheduled for next Tuesday."
+
+Example output:
+{{
+  "doctor": "Dr. Sharma",
+  "product": "CardioX",
+  "sentiment": "Positive",
+  "topics": ["CardioX efficacy", "Phase III data"],
+  "materials": ["CardioX brochure"],
+  "samples": ["CardioX sample packs"],
+  "summary": "Met with Dr. Sharma at Apollo Hospital to discuss CardioX efficacy. Doctor was very impressed with Phase III data and received product brochure and samples.",
+  "follow_up": "Schedule follow-up visit for next Tuesday",
+  "outcomes": "Doctor impressed with Phase III data, agreed to review materials",
+  "date": "today",
+  "time": "",
+  "interaction_type": "Meeting",
+  "attendees": ["Dr. Sharma"]
+}}
+
+Now extract data from this message:
+{user_message}
+
+Return ONLY the JSON object, nothing else.

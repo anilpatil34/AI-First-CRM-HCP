@@ -1,0 +1,25 @@
+.app { display: flex; flex-direction: column; min-height: 100vh; background: var(--color-bg-primary); }
+
+.app__main { display: flex; flex: 1; gap: var(--panel-gap); padding: var(--panel-gap); max-height: calc(100vh - var(--header-height)); overflow: hidden; }
+
+.app__left-panel { flex: 0 0 58%; max-width: 58%; overflow-y: auto; }
+
+.app__right-panel { flex: 1; display: flex; flex-direction: column; gap: var(--panel-gap); min-width: 0; overflow: hidden; }
+
+.app__right-panel > .chat-panel { flex: 1; min-height: 0; }
+
+.app__sidebar-widgets { display: flex; flex-direction: column; gap: var(--space-3); flex-shrink: 0; max-height: 45%; overflow-y: auto; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .app__main { flex-direction: column; max-height: none; overflow: visible; }
+  .app__left-panel { flex: none; max-width: 100%; overflow: visible; }
+  .app__right-panel { flex: none; min-height: 500px; }
+  .app__sidebar-widgets { flex-direction: row; }
+  .app__sidebar-widgets > * { flex: 1; }
+}
+
+@media (max-width: 640px) {
+  .app__main { padding: var(--space-3); gap: var(--space-3); }
+  .app__sidebar-widgets { flex-direction: column; }
+}

@@ -1,0 +1,11 @@
+.header { position: sticky; top: 0; z-index: var(--z-sticky); display: flex; align-items: center; justify-content: space-between; height: var(--header-height); padding: 0 var(--space-6); background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); }
+@media(prefers-color-scheme:dark){.header{background:rgba(15,23,42,0.85);}}
+.header__left { display: flex; align-items: center; gap: var(--space-4); }
+.header__logo { display: flex; align-items: center; gap: var(--space-3); }
+.header__logo-icon { font-size: 1.75rem; color: var(--color-accent-primary); }
+.header__title { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); background: var(--color-accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+.header__subtitle { font-size: var(--font-size-xs); color: var(--color-text-tertiary); font-weight: var(--font-weight-normal); }
+.header__right { display: flex; align-items: center; gap: var(--space-3); }
+.header__icon-btn { width: 36px; height: 36px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; color: var(--color-text-secondary); font-size: 1.15rem; transition: all var(--transition-fast); background: transparent; }
+.header__icon-btn:hover { background: var(--color-bg-hover); color: var(--color-accent-primary); }
+.header__avatar { width: 36px; height: 36px; border-radius: var(--radius-full); background: var(--color-accent-gradient); display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; }

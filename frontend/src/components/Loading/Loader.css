@@ -1,0 +1,4 @@
+.spinner { border: 2.5px solid var(--color-border); border-top-color: var(--color-accent-primary); border-radius: 50%; animation: spin 0.7s linear infinite; }
+.skeleton-line { background: var(--color-bg-tertiary); }
+.loader { display: flex; align-items: center; justify-content: center; gap: var(--space-3); padding: var(--space-8); color: var(--color-text-secondary); }
+.loader__text { font-size: var(--font-size-sm); }

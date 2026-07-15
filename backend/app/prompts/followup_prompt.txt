@@ -1,0 +1,29 @@
+Based on the following pharmaceutical sales interaction, suggest 3-5 specific, actionable follow-up actions that the sales representative should take.
+
+Consider:
+- What additional materials or clinical data should be shared
+- When to schedule the next visit or call
+- Any specific requests or concerns from the doctor to address
+- Relationship-building opportunities
+- Competitive positioning actions
+- Training or education opportunities
+
+Interaction details:
+{interaction_context}
+
+Return a JSON object with a "suggestions" array of strings. Each suggestion should be:
+- Specific and actionable (not generic)
+- Relevant to the interaction context
+- Prioritized by importance
+- Include a timeframe where applicable
+
+Example output:
+{{
+  "suggestions": [
+    "Schedule follow-up meeting with Dr. Sharma in 2 weeks to review patient outcomes",
+    "Send OncoBoost Phase III clinical study PDF via email by Friday",
+    "Add Dr. Sharma to the advisory board invite list for the Q3 medical conference",
+    "Prepare competitive comparison sheet vs. competitor product for next meeting",
+    "Arrange product training webinar for the hospital's cardiology department"
+  ]
+}}
